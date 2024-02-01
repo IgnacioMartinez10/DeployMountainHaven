@@ -36,6 +36,7 @@ app.use(
 );
 
 const initializePassport = require("./passport");
+const { log } = require("console");
 initializePassport();
 app.use(passport.initialize());
 app.use(passport.session());
@@ -205,7 +206,7 @@ app.get("/profile", (req, res) => {
     res.json(null);
   }
 });
-
+///123123
 app.post("/logout", (req, res) => {
   res.cookie("token", "").json(true);
 });
