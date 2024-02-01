@@ -172,7 +172,16 @@ app.post("/login", async (req, res) => {
         {},
         (err, token) => {
           if (err) throw err;
-          res.cookie("token", token).json(userDoc);
+
+          // Establece las opciones de la cookie
+          const cookieOptions = {
+            httpOnly: true,
+            secure: process.env.SECURE === 'production', // Solo segura en producción (HTTPS)
+            sameSite: 'None',
+          };
+
+          // Configura la cookie
+          res.cookie("token", token, cookieOptions).json(userDoc);
         }
       );
     } else {
