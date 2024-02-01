@@ -14,7 +14,7 @@ authRouter.get('/login/google/callback', passport.authenticate('google', { failu
         // Aquí podrías realizar acciones adicionales si es necesario
         console.log('Perfil del usuario autenticado:', req.user);
         // Redirección exitosa después de la autenticación con Google
-        res.redirect('https://deploy-mountain-haven.vercel.app/');
+        res.redirect('https://deploy-mountain-haven.vercel.app');
     }
 );
 
