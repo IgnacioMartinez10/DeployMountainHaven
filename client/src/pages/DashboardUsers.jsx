@@ -8,7 +8,7 @@ export const DashboardUsers = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:4000/users").then((response) => {
+    axios.get("https://deploymountainhaven.onrender.com/users").then((response) => {
       setUsers(response.data);
     });
   }, []);
@@ -17,11 +17,11 @@ export const DashboardUsers = () => {
     try {
       // Realiza la solicitud DELETE al servidor
       const response = await axios.patch(
-        `http://localhost:4000/users/${placeId}`,
+        `https://deploymountainhaven.onrender.com/users/${placeId}`,
         { value }
       );
 
-      const { data } = await axios.get("http://localhost:4000/users");
+      const { data } = await axios.get("https://deploymountainhaven.onrender.com/users");
       setUsers(data);
     } catch (error) {
       console.error("Error deleting row:", error);

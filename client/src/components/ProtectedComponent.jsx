@@ -7,7 +7,7 @@ const ProtectedComponent = () => {
     const accessToken = localStorage.getItem('accessToken');
 
     // Usar el accessToken como encabezado de autorización en una solicitud
-    axios.get('http://localhost:4000/api/data', {
+    axios.get('https://deploymountainhaven.onrender.com/api/data', {
       headers: {
         Authorization: `Bearer ${accessToken}`
       }

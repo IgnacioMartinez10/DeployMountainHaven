@@ -7,7 +7,7 @@ export const DashboardLodgings = () => {
   const [lodgings, setLodgings] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:4000/placesAll").then((response) => {
+    axios.get("https://deploymountainhaven.onrender.com/placesAll").then((response) => {
       setLodgings (response.data)});
   },[])
 
@@ -39,12 +39,12 @@ export const DashboardLodgings = () => {
     try {
       // Realiza la solicitud DELETE al servidor
       const response =await axios.patch(
-        `http://localhost:4000/places/${placeId}`,
+        `https://deploymountainhaven.onrender.com/places/${placeId}`,
       {value}
       );
 
       // Actualiza el estado eliminando la fila
-      const {data} = await axios.get("http://localhost:4000/placesAll")
+      const {data} = await axios.get("https://deploymountainhaven.onrender.com/placesAll")
       setLodgings(data);
     }catch (error) {
       console.error("Error deleting row:", error);

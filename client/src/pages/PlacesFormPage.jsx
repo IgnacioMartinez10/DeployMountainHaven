@@ -35,7 +35,7 @@ const PlacesFormPage = () => {
     if (!id) {
       return;
     }
-    axios.get("http://localhost:4000/places/" + id).then((res) => {
+    axios.get("https://deploymountainhaven.onrender.com/places/" + id).then((res) => {
       const { data } = res;
       console.log(data, "jjjjj");
       setInput({
@@ -84,7 +84,7 @@ const PlacesFormPage = () => {
     }
     axios
       .post(
-        "http://localhost:4000/upload", // Corregir la URL aquí
+        "https://deploymountainhaven.onrender.com/upload", // Corregir la URL aquí
         data,
         { headers: { "Content-Type": "multipart/form-data" } }
 
@@ -159,13 +159,13 @@ const PlacesFormPage = () => {
       try {
         if (id) {
           await axios.put(
-            "http://localhost:4000/places",
+            "https://deploymountainhaven.onrender.com/places",
             { data: input, id },
             { withCredentials: true }
           );
         } else {
           await axios.post(
-            "http://localhost:4000/places",
+            "https://deploymountainhaven.onrender.com/places",
             { data: input },
             { withCredentials: true }
           );

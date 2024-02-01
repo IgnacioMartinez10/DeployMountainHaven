@@ -12,7 +12,7 @@ const BookingPage = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/bookings", { withCredentials: true })
+      .get("https://deploymountainhaven.onrender.com/bookings", { withCredentials: true })
       .then((res) => {
         console.log("despues de la promesa", id);
         const foundBooking = res.data.find(({ _id }) => _id === id);

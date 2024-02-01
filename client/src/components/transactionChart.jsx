@@ -24,7 +24,7 @@ export const TransactionChart = () => {
 
   useEffect(() => {
     // Obtener datos de usuarios
-    axios.get('http://localhost:4000/usersAll')
+    axios.get('https://deploymountainhaven.onrender.com/usersAll')
       .then((response) => {
         setUserData(response.data);
 
@@ -38,7 +38,7 @@ export const TransactionChart = () => {
       
 
     // Obtener datos de hospedajes
-    axios.get('http://localhost:4000/placesAll')
+    axios.get('https://deploymountainhaven.onrender.com/placesAll')
       .then((response) => {
         const stats = {
           placesDeleted: response.data.filter(place => place.deleted).length,

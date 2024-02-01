@@ -18,7 +18,7 @@ const BookingsPage = () => {
     const placeId = localStorage.getItem('placeId');
 
     useEffect(() => {
-        axios.get("http://localhost:4000/bookings", { withCredentials: true })
+        axios.get("https://deploymountainhaven.onrender.com/bookings", { withCredentials: true })
             .then(res => {
                 setBookings(res.data);
             })
@@ -30,7 +30,7 @@ const BookingsPage = () => {
         setSubmitError(null);
     
         try {
-            const response = await axios.post(`http://localhost:4000/places/${placeId}/reviews`, {
+            const response = await axios.post(`https://deploymountainhaven.onrender.com/places/${placeId}/reviews`, {
                 data: {
                     review,
                     rating,
@@ -83,7 +83,7 @@ const BookingsPage = () => {
     const handleCancelReservation = async (bookingId) => {
         try {
             // Lógica para cancelar la reserva utilizando axios.delete u otro método
-            await axios.delete(`http://localhost:4000/bookings/${bookingId}`, { withCredentials: true });
+            await axios.delete(`https://deploymountainhaven.onrender.com/bookings/${bookingId}`, { withCredentials: true });
             // Actualizar la lista de reservas después de la cancelación
             setBookings((prevBookings) => prevBookings.filter((booking) => booking._id !== bookingId));
             

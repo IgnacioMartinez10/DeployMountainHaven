@@ -55,7 +55,7 @@ const BookingWidget = ({ place }) => {
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors)
         } else {
-            const response = await axios.post("http://localhost:4000/bookings", {
+            const response = await axios.post("https://deploymountainhaven.onrender.com/bookings", {
                 checkIn,
                 checkOut, numberOfGuests, name, phone, place: place._id, price: numberOfNights * place.price * numberOfGuests
             }, { withCredentials: true })
@@ -79,7 +79,7 @@ const BookingWidget = ({ place }) => {
                 const totalPrice = numberOfNights * place.price * numberOfGuests;
     
                 const response = await axios.post(
-                    `http://localhost:4000/mp/create-order/${place._id}`,
+                    `https://deploymountainhaven.onrender.com/mp/create-order/${place._id}`,
                     {
                         name,
                         totalPrice, // Enviar el precio total a Mercado Pago

@@ -17,7 +17,7 @@ const AccountPage = () => {
   }
 
   const logout = async () => {
-    await axios.post("http://localhost:4000/logout", {}, { withCredentials: true })
+    await axios.post("https://deploymountainhaven.onrender.com/logout", {}, { withCredentials: true })
     setRedirect("/")
     setUser(null)
   }

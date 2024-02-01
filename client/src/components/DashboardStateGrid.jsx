@@ -13,7 +13,7 @@ export const DashboardState = () => {
   const [prevPlaceData, setPrevPlaceData] = useState(null);
   useEffect(() => {
     // Obtener datos de usuarios
-    axios.get("http://localhost:4000/usersAll").then((response) => {
+    axios.get("https://deploymountainhaven.onrender.com/usersAll").then((response) => {
       setPrevUserData((prevUserData) => {
         setUserData(response.data.length);
         return prevUserData !== null ? prevUserData : response.data.length;
@@ -21,7 +21,7 @@ export const DashboardState = () => {
     });
   
     // Obtener datos de hospedajes
-    axios.get("http://localhost:4000/placesAll").then((response) => {
+    axios.get("https://deploymountainhaven.onrender.com/placesAll").then((response) => {
       setPrevPlaceData((prevPlaceData) => {
         setPlaceData(response.data.length);
         return prevPlaceData !== null ? prevPlaceData : response.data.length;

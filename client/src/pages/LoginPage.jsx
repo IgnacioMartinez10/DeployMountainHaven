@@ -31,7 +31,7 @@ const LoginPage = () => {
         e.preventDefault();
         try {
             const { data } = await axios.post(
-                "http://localhost:4000/login",
+                "https://deploymountainhaven.onrender.com/login",
                 {
                     email,
                     password,
@@ -67,7 +67,7 @@ const LoginPage = () => {
         console.log(googleAccessToken);
         try {
             const { data } = await axios.post(
-                "http://localhost:4000/auth/register/google",
+                "https://deploymountainhaven.onrender.com/auth/register/google",
                 {
                     emailGoogle: response.profileObj.email,
                     nameGoogle: response.profileObj.name,

@@ -11,7 +11,7 @@ const PlacesPage = () => {
     const [places, setPlaces] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:4000/user-places", { withCredentials: true })
+        axios.get("https://deploymountainhaven.onrender.com/user-places", { withCredentials: true })
             .then(({ data }) => {
                 setPlaces(data)
             })

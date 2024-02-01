@@ -10,7 +10,7 @@ export const UserContextProvider = ({ children }) => {
 
     useEffect(() => {
         if (!user) {
-            axios.get("http://localhost:4000/profile", { withCredentials: true })
+            axios.get("https://deploymountainhaven.onrender.com/profile", { withCredentials: true })
                 .then(({ data }) => {
                     setUser(data)
                     setReady(true)

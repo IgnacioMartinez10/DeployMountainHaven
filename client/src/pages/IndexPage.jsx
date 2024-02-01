@@ -24,7 +24,7 @@ const IndexPage = () => {
   const fetchPlaces = async () => {
     try {
       // Construir la URL con los parámetros de filtro
-      let url = "http://localhost:4000/places/";
+      let url = "https://deploymountainhaven.onrender.com/places/";
       const filterParams = [];
 
 
@@ -42,7 +42,7 @@ const IndexPage = () => {
 
       const response = await axios.get(url);
       setPlaces(response.data.filter((place) => !place.deleted));
-      const reviewsAll = await axios.get("http://localhost:4000/reviews/");
+      const reviewsAll = await axios.get("https://deploymountainhaven.onrender.com/reviews/");
       setReviews(reviewsAll.data.reviews); // Actualizamos el estado con los lugares obtenidos
     } catch (error) {
       console.error("Error al obtener los lugares:", error);
@@ -62,7 +62,7 @@ const IndexPage = () => {
 
   const handleSort = async (sortBy) => {
     try {
-      const response = await axios.get(`http://localhost:4000/places/sort-by-${sortBy}`);
+      const response = await axios.get(`https://deploymountainhaven.onrender.com/places/sort-by-${sortBy}`);
       setSortedPlaces(response.data); // Actualizamos el estado con los lugares ordenados
     } catch (error) {
       console.error(`Error al ordenar por ${sortBy}:`, error);

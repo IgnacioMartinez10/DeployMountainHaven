@@ -37,9 +37,9 @@ const createOrder = async (req, res) => {
               },
           ],
           back_urls: {
-              success: "http://localhost:4000/success",
+              success: "https://deploymountainhaven.onrender.com/success",
           },
-          notification_url: "http://localhost:4000/mp/webhook",
+          notification_url: "https://deploymountainhaven.onrender.com/mp/webhook",
       };
 
       const response = await mercadopagoAxios.post(

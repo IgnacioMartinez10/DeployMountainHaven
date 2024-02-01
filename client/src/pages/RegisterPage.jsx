@@ -24,7 +24,7 @@ const RegisterPage = () => {
     const registerUser = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:4000/register", {
+            await axios.post("https://deploymountainhaven.onrender.com/register", {
                 name,
                 email,
                 password

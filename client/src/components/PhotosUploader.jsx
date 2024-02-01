@@ -5,7 +5,7 @@ const PhotosUploader = ({photos, photosLink, onChange, handleChange}) => {
     const addPhotoByLink = async (e) => {
         e.preventDefault()
         try {
-            const { data: filename } = await axios.post("http://localhost:4000/uploads-by-link", { link: input.photosLink }, { withCredentials: true })
+            const { data: filename } = await axios.post("https://deploymountainhaven.onrender.com/uploads-by-link", { link: input.photosLink }, { withCredentials: true })
             onChange(prev => {
                 return ({
                     ...prev,
@@ -25,7 +25,7 @@ const PhotosUploader = ({photos, photosLink, onChange, handleChange}) => {
         for (let i = 0; i < files.length; i++) {
             data.append("photos", files[i]);
         }
-        axios.post("http://localhost:4000/upload/", data, { headers: { "Content-Type": "multipart/form-data" } }, { withCredentials: true })
+        axios.post("https://deploymountainhaven.onrender.com/upload/", data, { headers: { "Content-Type": "multipart/form-data" } }, { withCredentials: true })
             .then(res => {
                 const { data: filenames } = res;
                 (prev => {
@@ -48,7 +48,7 @@ const PhotosUploader = ({photos, photosLink, onChange, handleChange}) => {
 
                 {photos.length > 0 && photos.map((link, index) => (
                     <div key={index} className="h-32 flex">
-                        <img className="rounded-2xl object-cover w-full" src={"http://localhost:4000/uploads/" + link} alt="" />
+                        <img className="rounded-2xl object-cover w-full" src={"https://deploymountainhaven.onrender.com/uploads/" + link} alt="" />
                     </div>
                 ))}
 

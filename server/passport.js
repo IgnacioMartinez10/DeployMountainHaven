@@ -25,7 +25,7 @@ function initializePassport() {
       {
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: 'http://localhost:4000/auth/login/google/callback',
+        callbackURL: 'https://deploymountainhaven.onrender.com/auth/login/google/callback',
       },
       async (accessToken, refreshToken, profile, done) => {
         console.log(profile);

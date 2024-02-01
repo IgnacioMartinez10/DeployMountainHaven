@@ -13,7 +13,7 @@ const PlacePage = () => {
         if (!id) {
             return
         }
-        axios.get(`http://localhost:4000/places/${id}`)
+        axios.get(`https://deploymountainhaven.onrender.com/places/${id}`)
             .then(res => {
                 setPlace(res.data)
 
